@@ -1,0 +1,1 @@
+{'AIKHomoG': 17, 'SchemaNewHetero': 16, 'DoogHomoG': 14, 'SchemaDemo': 11, 'DoogHeteroG': 11, 'DTeam': 10, 'SibHeteroG': 10, 'LoneForwardTeamHomoG': 8, 'BriSpec': 7, 'FemmeBotsHeteroG': 7, 'PermHomoG': 7, 'BasicTeam': 6, 'CommTeam': 6, 'CDTeamHetero': 6, 'JunTeamHeteroG': 6, 'DaveHeteroG': 6, 'Kechze': 6, 'GoToBall': 5, 'MattiHetero': 2}
