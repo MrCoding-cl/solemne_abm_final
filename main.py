@@ -9,7 +9,6 @@ jarpath = str(Path('SoccerBots/teams/LabABM.jar'))
 logpath = str(Path('log/log.txt'))
 
 
-
 def get_files():
     files = []
     for file in os.listdir(teamsfolderpath):
@@ -89,3 +88,27 @@ for comb in combinatories:
     print(mapWinners)
     print("mapVs")
     print(mapVs)
+
+    ## write to file
+with open("mapWinners.txt", "w") as text_file:
+    mapWinners = {k: v for k, v in sorted(mapWinners.items(), key=lambda item: item[1], reverse=True)}
+    text_file.write(str(mapWinners))
+
+with open("mapVs.csv", "w") as text_file:
+    # Write as matrix like
+    # ---,team1,team2,team3,team4
+    # team1,0,1,0,0
+    # team2,1,0,0,0
+    # team3,0,0,0,1
+    # team4,0,0,1,0
+    matrix = [["---"] + files]
+    for team1 in files:
+        row = [team1]
+        for team2 in files:
+            if team1 == team2:
+                row.append("x")
+            else:
+                row.append(mapVs[team1][team2])
+        matrix.append(row)
+    for row in matrix:
+        text_file.write(",".join(map(str, row)) + "\n")
