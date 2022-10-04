@@ -1,8 +1,5 @@
 TeamBots 2.0e (c)2000 Tucker Balch, CMU and GTRC
-1781
+1809
 maxtimestep statement read, treated as timestep
-1 0
-2 0
-3 0
-4 0
-5 0
+0 1
+0 2

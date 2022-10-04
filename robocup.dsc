@@ -27,7 +27,7 @@ bounds -1.47 1.47 -.8625 .8625
 // The seed statement sets the random number seed.  The default is
 // -1
 
-seed 3
+seed 8792
 
 
 //======
@@ -145,31 +145,31 @@ object EDU.gatech.cc.is.simulation.GolfBallNoiseSim 0 0 0 0.02
 // numbers according to the order in which they are listed here.
 
 //======WEST TEAM======
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim AIKHomoG
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim BrianTeam
 //------------your control system name goes here ^^^^^^^^
 	-1.2  0    0 xEAEA00 xFFFFFF 1
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim AIKHomoG
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim BrianTeam
 //------------your control system name goes here ^^^^^^^^
 	-.5   0    0 xEAEA00 xFFFFFF 1
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim AIKHomoG
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim BrianTeam
 //------------your control system name goes here ^^^^^^^^
 	-.15  .5   0 xEAEA00 xFFFFFF 1
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim AIKHomoG
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim BrianTeam
 //------------your control system name goes here ^^^^^^^^
 	-.15  0    0 xEAEA00 xFFFFFF 1
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim AIKHomoG
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim BrianTeam
 //------------your control system name goes here ^^^^^^^^
 	-.15  -.5  0 xEAEA00 xFFFFFF 1
 
 //======EAST TEAM======
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim CDTeamHetero
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim FemmeBotsHeteroG
 	 1.2  0    0 xFF0000 x0000FF 2
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim CDTeamHetero
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim FemmeBotsHeteroG
 	 .5   0    0 xFF0000 x0000FF 2
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim CDTeamHetero
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim FemmeBotsHeteroG
 	 .15  .5   0 xFF0000 x0000FF 2
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim CDTeamHetero
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim FemmeBotsHeteroG
 	 .15  0    0 xFF0000 x0000FF 2
-robot EDU.gatech.cc.is.abstractrobot.SocSmallSim CDTeamHetero
+robot EDU.gatech.cc.is.abstractrobot.SocSmallSim FemmeBotsHeteroG
 	 .15  -.5  0 xFF0000 x0000FF 2
 

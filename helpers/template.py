@@ -3,7 +3,7 @@ from pathlib import Path
 robocuppath = str(Path('robocup.dsc'))
 
 
-def writeTemplate(team1, team2):
+def writeTemplate(team1, team2,seed):
     text = f"""// This description file specifies the environment for a RoboCup 
 // soccer game simulation in the JavaBotSim simulator.
 
@@ -33,7 +33,7 @@ bounds -1.47 1.47 -.8625 .8625
 // The seed statement sets the random number seed.  The default is
 // -1
 
-seed 3
+seed {seed}
 
 
 //======

@@ -1,4 +1,5 @@
 import os
+import random
 import re
 from pathlib import Path
 from helpers.template import writeTemplate
@@ -108,9 +109,9 @@ def WriteDualMapCSV(mapToParse, filename):
 combinatories = get_combinatories(files)
 
 ## execute command: java -jar C:\Users\SlimeS\IdeaProjects\LabABM\Domains\SoccerBots\teams\LabABM.jar C:\Users\SlimeS\IdeaProjects\LabABM\Domains\SoccerBots\teams\robocup.dsc > C:\Users\SlimeS\PycharmProjects\LabABM\log.txt
-
+seed = random.randint(0, 10000)
 for comb in combinatories:
-    writeTemplate(comb[0], comb[1])
+    writeTemplate(comb[0], comb[1], seed)
     print(comb[0], "vs", comb[1], end=" ->> ")
     os.system(
         f"java -jar {jarpath} {robocuppath} > {logpath}")
