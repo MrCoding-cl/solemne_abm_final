@@ -1,1 +1,19 @@
-{'AIKHomoG': 17, 'SchemaNewHetero': 16, 'DoogHomoG': 14, 'SchemaDemo': 11, 'DoogHeteroG': 11, 'DTeam': 10, 'SibHeteroG': 10, 'LoneForwardTeamHomoG': 8, 'BriSpec': 7, 'FemmeBotsHeteroG': 7, 'PermHomoG': 7, 'BasicTeam': 6, 'CommTeam': 6, 'CDTeamHetero': 6, 'JunTeamHeteroG': 6, 'DaveHeteroG': 6, 'Kechze': 6, 'GoToBall': 5, 'MattiHetero': 2}
+AIKHomoG: 17
+SchemaDemo: 11
+SchemaNewHetero: 16
+BasicTeam: 6
+BriSpec: 7
+CommTeam: 6
+DaveHeteroG: 8
+DoogHomoG: 14
+DTeam: 10
+FemmeBotsHeteroG: 7
+GoToBall: 6
+LoneForwardTeamHomoG: 7
+PermHomoG: 7
+SibHeteroG: 10
+CDTeamHetero: 6
+DoogHeteroG: 11
+JunTeamHeteroG: 6
+Kechze: 6
+MattiHetero: 2
