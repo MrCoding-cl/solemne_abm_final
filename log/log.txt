@@ -5,8 +5,8 @@ maxtimestep statement read, treated as timestep
  sim time    	: 600000 milliseconds
  timestep 		: 50 milliseconds
  timeout      	: 600000 milliseconds
- frames/second	: 11719.7265625
- free memory	: 387998656
+ frames/second	: 11606.382978723404
+ free memory	: 388047840
  total memory	: 514850816
  os.name	: Windows 11
  os.version	: 10.0

@@ -45,7 +45,7 @@ def regex_Text(text):
     match = regex.findall(text)
     ## return last match
     try:
-        return match[-1][0], match[-1][1]
+        return int(match[-1][0]), int(match[-1][1])
     except:
         return 0, 0
 
