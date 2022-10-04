@@ -42,8 +42,9 @@ def get_combinatories(files):
 def regex_Text(text):
     ## the regex need to catch the following: 3 0
     ## the regex need to catch the following: 10 12
-    regex = re.compile(r'(\d+)\s(\d+)')
-    match = regex.findall(text)
+    ## and avoid format like: 0.1910282903690168
+    regex = r"(\d+)\s(\d+)"
+    match = re.findall(regex, text, re.MULTILINE)
     ## return last match
     try:
         return int(match[-1][0]), int(match[-1][1])
@@ -67,7 +68,7 @@ def getWinner(mapWin, mapVs, mapGoals, team1, team2):
             mapVs[team2][team1] = -1
         elif g2 > g1:
             ## check if team2 is in mapWin
-            print(team2, "Ganó", g1, "-", g2)
+            print(team2, "Ganó", g2, "-", g1)
             if team2 in mapWin:
                 mapWin[team2] += 1
             else:
@@ -114,6 +115,11 @@ for comb in combinatories:
     os.system(
         f"java -jar {jarpath} {robocuppath} > {logpath}")
     getWinner(mapWinners, mapVs, mapGoals, comb[0], comb[1])
+    ## Copy log file to log/log_history/log_comb[0]_comb[1]_date.txt
+    date = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    finalPath = Path(f"log/log_history/{comb[0]}_{comb[1]}_{date}.txt")
+    os.system(
+        f"copy {logpath} {finalPath}")
 
     ## write to file
 
