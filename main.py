@@ -84,15 +84,13 @@ for comb in combinatories:
     os.system(
         f"java -jar {jarpath} {robocuppath} > {logpath}")
     getWinner(mapWinners, mapVs, comb[0], comb[1])
-    print("mapWinners")
-    print(mapWinners)
-    print("mapVs")
-    print(mapVs)
 
     ## write to file
 with open("mapWinners.txt", "w") as text_file:
-    mapWinners = {k: v for k, v in sorted(mapWinners.items(), key=lambda item: item[1], reverse=True)}
-    text_file.write(str(mapWinners))
+    text = ""
+    for key, value in mapWinners.items():
+        text += f"{key}: {value}\n"
+    text_file.write(text)
 
 with open("mapVs.csv", "w") as text_file:
     # Write as matrix like
