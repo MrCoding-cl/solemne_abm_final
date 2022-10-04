@@ -2,6 +2,7 @@ import os
 import re
 from pathlib import Path
 from helpers.template import writeTemplate
+import datetime as dt
 
 
 def get_files():
@@ -57,7 +58,7 @@ def getWinner(mapWin, mapVs, mapGoals, team1, team2):
         g1, g2 = regex_Text(lines)
         if g1 > g2:
             ## check if team1 is in mapWin
-            print(team1, "Ganó", g1,"-", g2)
+            print(team1, "Ganó", g1, "-", g2)
             if team1 in mapWin:
                 mapWin[team1] += 1
             else:
@@ -66,7 +67,7 @@ def getWinner(mapWin, mapVs, mapGoals, team1, team2):
             mapVs[team2][team1] = -1
         elif g2 > g1:
             ## check if team2 is in mapWin
-            print(team2, "Ganó", g1,"-", g2)
+            print(team2, "Ganó", g1, "-", g2)
             if team2 in mapWin:
                 mapWin[team2] += 1
             else:
@@ -75,7 +76,7 @@ def getWinner(mapWin, mapVs, mapGoals, team1, team2):
             mapVs[team1][team2] = -1
         else:
             ## draw
-            print("Empate", g1,"-", g2)
+            print("Empate", g1, "-", g2)
             mapVs[team1][team2] = 0
             mapVs[team2][team1] = 0
         mapGoals[team1][team2] = g1
@@ -83,7 +84,7 @@ def getWinner(mapWin, mapVs, mapGoals, team1, team2):
 
 
 def WriteDualMapCSV(mapToParse, filename):
-    with open(filename, "w") as text_file:
+    with open(str(Path(f"out/{filename}")), "w") as text_file:
         # Write as matrix like
         # ---,team1,team2,team3,team4
         # team1,0,1,0,0
@@ -109,17 +110,22 @@ combinatories = get_combinatories(files)
 
 for comb in combinatories:
     writeTemplate(comb[0], comb[1])
-    print(comb[0], "vs", comb[1],end=" ->> ")
+    print(comb[0], "vs", comb[1], end=" ->> ")
     os.system(
         f"java -jar {jarpath} {robocuppath} > {logpath}")
     getWinner(mapWinners, mapVs, mapGoals, comb[0], comb[1])
 
     ## write to file
-with open("mapWinners.txt", "w") as text_file:
+
+    d = dt.datetime.now()
+date = d.strftime("%d-%m-%Y %H.%M.%S")
+with open(str(Path("out/mapWinners.txt")), "w") as text_file:
     text = ""
     for key, value in mapWinners.items():
         text += f"{key}: {value}\n"
     text_file.write(text)
 
-WriteDualMapCSV(mapVs, "mapVs.csv")
-WriteDualMapCSV(mapGoals, "mapGoals.csv")
+## now to string dd/mm/YY H:M:S
+
+WriteDualMapCSV(mapVs, "mapVs " + date + ".csv")
+WriteDualMapCSV(mapGoals, "mapGoals " + date + ".csv")
