@@ -1,4 +1,5 @@
 import os
+import platform
 import random
 import re
 from pathlib import Path
@@ -119,8 +120,14 @@ for comb in combinatories:
     ## Copy log file to log/log_history/log_comb[0]_comb[1]_date.txt
     date = dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     finalPath = Path(f"log/log_history/{comb[0]}_{comb[1]}_{date}.txt")
-    os.system(
-        f"copy {logpath} {finalPath}")
+    if platform.system()=='Darwin':
+        os.system(f"cp {logpath} {finalPath}")
+
+    elif platform.system()=='Windows':
+        os.system(f"copy {logpath} {finalPath}")
+
+    elif platform.system()=='Linux':
+        os.system(f"cp {logpath} {finalPath}")
 
     ## write to file
 
